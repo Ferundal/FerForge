@@ -8,5 +8,6 @@ namespace FerForge._Models.ProjectManager
 {
     internal class ProjectManager
     {
+        private List<ProjectInfo> projectInfos;
     }
 }

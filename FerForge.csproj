@@ -65,6 +65,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="Data\" />
 	  <Folder Include="_Views\" />
 	  <Folder Include="_ViewModels\" />
 	</ItemGroup>
