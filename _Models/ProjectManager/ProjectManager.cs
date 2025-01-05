@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FerForge.Services.ProjectManager
+namespace FerForge._Models.ProjectManager
 {
     internal class ProjectManager
     {
-
     }
 }
