@@ -7,14 +7,16 @@
 
     <AbsoluteLayout>
 
-        <!-- Main Content Block -->
+        <!-- Main Content Block (Content) will be below -->
         <local:Content AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-                               AbsoluteLayout.LayoutFlags="All" />
+                   AbsoluteLayout.LayoutFlags="All"
+                   ZIndex="0" />
 
-        <!-- Dropdown Menu Block -->
-        <local:ProjectMenu AbsoluteLayout.LayoutBounds="0.1, 0.1, 0.8, 0.3"
-                           AbsoluteLayout.LayoutFlags="All"
-                           IsVisible="{Binding IsMenuVisible}" />
+        <!-- Dropdown Menu Block (ProjectMenu) will be on top -->
+        <local:ProjectMenu x:Name="ProjectMenu"
+                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"
+                       ZIndex="1" />
 
     </AbsoluteLayout>
 </ContentPage>

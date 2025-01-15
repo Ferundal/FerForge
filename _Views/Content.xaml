@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FerForge._Views.Content">
 
-    <VerticalStackLayout>
-        <Label Text="Main Content" BackgroundColor="LightBlue" />
-        <Button Text="Click Me" BackgroundColor="LightGreen" />
-    </VerticalStackLayout>
+    <Label Text="Main Content"
+               BackgroundColor="LightBlue"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand" />
 </ContentView>

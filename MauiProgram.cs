@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using FerForge._ViewModels;
+using Microsoft.Extensions.Logging;
 
 namespace FerForge
 {
@@ -18,6 +19,9 @@ namespace FerForge
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton<MainPageViewModel>();
+            builder.Services.AddSingleton<ProjectMenuViewModel>();
+
 
             return builder.Build();
         }

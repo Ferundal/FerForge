@@ -2,9 +2,22 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FerForge._Views.ProjectMenu">
-    
-    <VerticalStackLayout>
-        <Label Text="Menu Content" BackgroundColor="LightCoral" />
-        <Button Text="Menu Button" BackgroundColor="LightGoldenrodYellow" />
-    </VerticalStackLayout>
+
+    <HorizontalStackLayout x:Name="DropDownOptionsStack">
+        <!-- Known Projects-->
+        <VerticalStackLayout>
+            <!-- Button to droop down known projects list-->
+            <Button Text="Menu Button"
+                    Command="{Binding OnButtonClick}"
+                    BackgroundColor="LightCoral" />
+
+            <!-- Known projects droop down list-->
+            <Label Text="{Binding MaxButtonHeight}" BackgroundColor="LightCoral" />
+        </VerticalStackLayout>
+
+        <!-- Other buttons with drop down lists -->
+        <VerticalStackLayout>
+            
+        </VerticalStackLayout>
+    </HorizontalStackLayout>
 </ContentView>
