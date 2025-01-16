@@ -16,7 +16,7 @@
     <MauiXaml Update="_Views\MainPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="_Views\ProjectMenu.xaml">
+    <MauiXaml Update="_Views\TopBar.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

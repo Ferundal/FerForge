@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FerForge.Models
 {
-    internal class ChangeSet
+    public class ChangeSet
     {
         // Name of the change set
         public string ChangeSetName { get; set; }

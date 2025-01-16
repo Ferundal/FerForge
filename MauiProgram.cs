@@ -20,7 +20,7 @@ namespace FerForge
     		builder.Logging.AddDebug();
 #endif
             builder.Services.AddSingleton<MainPageViewModel>();
-            builder.Services.AddSingleton<ProjectMenuViewModel>();
+            builder.Services.AddSingleton<TopBarViewModel>();
 
 
             return builder.Build();

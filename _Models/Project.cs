@@ -1,11 +1,11 @@
 ﻿namespace FerForge.Models
 {
-    internal class Mod
+    public class Project
     {
-
+        public string Name { get; set; }
         public List<ChangeSet> ChangeSet;
 
-        public Mod()
+        public Project()
         { 
             ChangeSet = new List<ChangeSet>();
         }

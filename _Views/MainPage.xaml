@@ -12,8 +12,8 @@
                    AbsoluteLayout.LayoutFlags="All"
                    ZIndex="0" />
 
-        <!-- Dropdown Menu Block (ProjectMenu) will be on top -->
-        <local:ProjectMenu x:Name="ProjectMenu"
+        <!-- Top Bar will be on top -->
+        <local:TopBar x:Name="TopBar"
                        AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                        AbsoluteLayout.LayoutFlags="All"
                        ZIndex="1" />
