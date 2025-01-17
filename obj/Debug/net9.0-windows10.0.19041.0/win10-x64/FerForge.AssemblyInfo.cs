@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FerForge")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+0056aa0c9238c1a292d722fa68387b7ded052f6a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+d40092047a4e52c6467c30bab3dee460eba89923")]
 [assembly: System.Reflection.AssemblyProductAttribute("FerForge")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FerForge")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

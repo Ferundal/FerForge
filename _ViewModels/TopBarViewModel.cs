@@ -7,32 +7,32 @@ namespace FerForge._ViewModels
 {
     public partial class TopBarViewModel : ObservableObject
     {
-        private const string ProjectsManagementButtonDeafultLabel = "New Project";
+        private const string ProjectsManagerStatusDeafultLabel = "New Project";
 
         public TopBarViewModel()
         {
-            Projects = new ObservableCollection<Project>
+            KnownProjects = new ObservableCollection<Project>
             {
                 new Project { Name = "Project 1" },
                 new Project { Name = "Project 2" },
                 new Project { Name = "Project 3" }
             };
 
-            if (Projects.Count > 0)
+            if (KnownProjects.Count > 0)
             {
-                ProjectsManagementButtonLabel = Projects[0].Name;
+                ProjectsManagerStatusLabel = KnownProjects[0].Name;
             }
             else
             {
-                ProjectsManagementButtonLabel = ProjectsManagementButtonDeafultLabel;
+                ProjectsManagerStatusLabel = ProjectsManagerStatusDeafultLabel;
             }
         }
 
         [ObservableProperty]
-        public partial string? ProjectsManagementButtonLabel { get; private set; }
+        public partial string? ProjectsManagerStatusLabel { get; private set; }
 
         // Collection of known projects
-        public ObservableCollection<Project> Projects { get; }
+        public ObservableCollection<Project> KnownProjects { get; }
 
         [ObservableProperty]
         public partial bool IsKnownProjectsListVisible { get; private set; } = false;

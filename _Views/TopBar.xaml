@@ -3,17 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FerForge._Views.TopBar">
 
-    <HorizontalStackLayout x:Name="DropDownOptionsStack">
+    
+    <HorizontalStackLayout>
         <!-- Known Projects-->
         <VerticalStackLayout>
             <!-- Button to droop down known projects list-->
             <Button
-                x:Name="CurrentProjectSelector"
-                Text="{Binding ProjectsManagementButtonLabel}"
+                Text="{Binding ProjectsManagerStatusLabel}"
                 Command="{Binding ShowKnownProjectsCommand}"
                 BackgroundColor="LightCoral" />
-            
-            <ListView ItemsSource="{Binding Projects}"
+
+            <ListView ItemsSource="{Binding KnownProjects}"
               IsVisible="{Binding IsKnownProjectsListVisible}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
