@@ -7,7 +7,7 @@
 
         <BoxView
                 BackgroundColor="Black"
-                Opacity="0.5"
+                Opacity="0.3"
                 IsVisible="{Binding IsKnownProjectsVisible}"
                 InputTransparent="False"
                 HorizontalOptions="FillAndExpand"
@@ -22,31 +22,55 @@
 
         <HorizontalStackLayout
             HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand"
-            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-            AbsoluteLayout.LayoutFlags="All">
+            VerticalOptions="FillAndExpand">
             <!-- Known Projects-->
-            <VerticalStackLayout>
+            <VerticalStackLayout
+                MinimumWidthRequest="300"
+                MaximumWidthRequest="500"
+                HorizontalOptions="FillAndExpand">
+                
                 <!-- Button to droop down known projects list-->
                 <Button
+                    HorizontalOptions="FillAndExpand"
                     Text="{Binding ProjectsManagerStatusLabel}"
                     Command="{Binding KnownProjectsButtonPressedCommand}"
                     BackgroundColor="LightCoral" />
 
                 <ListView
-                    ItemsSource="{Binding KnownProjects}"
+                    HorizontalOptions="FillAndExpand"
+                    ItemsSource="{Binding KnownProjectsExcludingCurrent}"
                     IsVisible="{Binding IsKnownProjectsVisible}">
 
+                    <!-- Template for each item in the list -->
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding Name}" />
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="10">
+                                    <Label
+                                        Text="{Binding Name}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Text="{Binding Path}"
+                                        HorizontalOptions="EndAndExpand"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Text="{Binding LastOpened, StringFormat='{0:MM/dd/yyyy}'}"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Center" />
+                                    <CheckBox
+                                        IsChecked="{Binding IsAvailable}"
+                                        VerticalOptions="Center" />
+                                </StackLayout>
+                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                </ListView>
-            </VerticalStackLayout>
 
-            <!-- Other buttons with drop down lists -->
-            <VerticalStackLayout>
+                    <!-- Footer for the "Add new" button -->
+                    <ListView.Footer>
+                        <Button Text="Load More" Command="{Binding LoadMoreCommand}" />
+                    </ListView.Footer>
+                </ListView>
+
 
             </VerticalStackLayout>
         </HorizontalStackLayout>

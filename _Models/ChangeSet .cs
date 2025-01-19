@@ -10,13 +10,13 @@ namespace FerForge.Models
     public class ChangeSet
     {
         // Name of the change set
-        public string ChangeSetName { get; set; }
+        public string Name { get; set; } = String.Empty;
 
         // Description of the change set
-        public string ChangeSetDescription { get; set; }
+        public string Description { get; set; } = String.Empty;
 
         // Reasons for the changes (e.g., for comments)
-        public string ChangeSetReasons { get; set; }
+        public string Reasons { get; set; } = String.Empty;
 
         // List of sub-change sets (for nested changes)
         public List<ChangeSet> SubChangeSets { get; set; } = new List<ChangeSet>();

@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace FerForge.Services.ProjectService
 {
-    internal class ProjectService
+    public class ProjectInfoService
     {
         // File name for storing known projects
         private const string FileName = "KnownProjects.json";

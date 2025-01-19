@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using FerForge.Models;
+using FerForge._Models.ProjectManager;
+using FerForge.Services.ProjectService;
 using System.Collections.ObjectModel;
 
 namespace FerForge._ViewModels
@@ -8,23 +9,33 @@ namespace FerForge._ViewModels
     public partial class TopBarViewModel : ObservableObject
     {
         private const string ProjectsManagerStatusDeafultLabel = "New Project";
+        private ProjectInfoService projectInfoService;
+        private List<ProjectInfo> knownProjects;
+        private ProjectInfo currentProjectInfo;
 
-        public TopBarViewModel()
+        public TopBarViewModel(ProjectInfoService projectInfoService)
         {
-            KnownProjects = new ObservableCollection<Project>
+            this.projectInfoService = projectInfoService;
+
+            //knownProjects = projectInfoService.LoadKnownProjects();
+
+            knownProjects = new List<ProjectInfo>
             {
-                new Project { Name = "Project 1" },
-                new Project { Name = "Project 2" },
-                new Project { Name = "Project 3" }
+                new ProjectInfo { Name="Clown", LastOpened=new DateTime(1991, 2, 6), Path="clown.ferp", IsAvailable=true },
+                new ProjectInfo { Name="Big brother", LastOpened=new DateTime(1984, 2, 6), Path="big_brother.ferp", IsAvailable=true },
+                new ProjectInfo { Name="War", LastOpened=new DateTime(1941, 2, 6), Path="war.ferp", IsAvailable=true }
             };
 
-            if (KnownProjects.Count > 0)
+            if (knownProjects.Count > 0)
             {
-                ProjectsManagerStatusLabel = KnownProjects[0].Name;
+                currentProjectInfo = knownProjects[0];
+                ProjectsManagerStatusLabel = currentProjectInfo.Name;
+                KnownProjectsExcludingCurrent = new ObservableCollection<ProjectInfo>(knownProjects.Skip(1));
             }
             else
             {
                 ProjectsManagerStatusLabel = ProjectsManagerStatusDeafultLabel;
+                KnownProjectsExcludingCurrent = new ObservableCollection<ProjectInfo>();
             }
         }
 
@@ -32,7 +43,7 @@ namespace FerForge._ViewModels
         public partial string? ProjectsManagerStatusLabel { get; private set; }
 
         // Collection of known projects
-        public ObservableCollection<Project> KnownProjects { get; }
+        public ObservableCollection<ProjectInfo> KnownProjectsExcludingCurrent { get; }
 
         [ObservableProperty]
         public partial bool IsKnownProjectsVisible { get; private set; } = false;
