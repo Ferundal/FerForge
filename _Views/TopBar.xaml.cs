@@ -11,5 +11,5 @@ public partial class TopBar : ContentView
         var viewModel = IPlatformApplication.Current.Services.GetService<TopBarViewModel>();
 
         BindingContext = viewModel;
-	}
+    }
 }

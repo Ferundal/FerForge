@@ -5,18 +5,25 @@
              Title="MainPage"
              xmlns:local="clr-namespace:FerForge._Views">
 
-    <AbsoluteLayout>
+    <AbsoluteLayout
+        AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+        AbsoluteLayout.LayoutFlags="All">
 
         <!-- Main Content Block (Content) will be below -->
-        <local:Content AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-                   AbsoluteLayout.LayoutFlags="All"
-                   ZIndex="0" />
+        <local:Content
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="All"
+            ZIndex="0" />
 
         <!-- Top Bar will be on top -->
-        <local:TopBar x:Name="TopBar"
-                       AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-                       AbsoluteLayout.LayoutFlags="All"
-                       ZIndex="1" />
+        <local:TopBar
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="All"
+            ZIndex="1" />
 
     </AbsoluteLayout>
 </ContentPage>

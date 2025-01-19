@@ -71,12 +71,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="_Views\TopBar.xaml.cs">
-	    <DependentUpon>TopBar.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiXaml Update="_Views\Content.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

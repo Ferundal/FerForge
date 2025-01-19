@@ -40,7 +40,7 @@ namespace FerForge._ViewModels
         [RelayCommand]
         public void KnownProjectsButtonPressed()
         {
-            IsKnownProjectsVisible = true;
+            IsKnownProjectsVisible = !IsKnownProjectsVisible;
         }
 
         [RelayCommand]

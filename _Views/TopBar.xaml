@@ -3,9 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FerForge._Views.TopBar">
 
-
-
-
     <AbsoluteLayout>
 
         <BoxView
@@ -17,25 +14,29 @@
                 VerticalOptions="FillAndExpand"
                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                 AbsoluteLayout.LayoutFlags="All">
-            
+
             <BoxView.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding HideKnownProjects}"/>
+                <TapGestureRecognizer Command="{Binding HideKnownProjectsCommand}"/>
             </BoxView.GestureRecognizers>
         </BoxView>
 
-        <HorizontalStackLayout>
+        <HorizontalStackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
             <!-- Known Projects-->
             <VerticalStackLayout>
                 <!-- Button to droop down known projects list-->
                 <Button
                     Text="{Binding ProjectsManagerStatusLabel}"
-                    Command="{Binding KnownProjectsButtonPressed}"
+                    Command="{Binding KnownProjectsButtonPressedCommand}"
                     BackgroundColor="LightCoral" />
 
                 <ListView
                     ItemsSource="{Binding KnownProjects}"
                     IsVisible="{Binding IsKnownProjectsVisible}">
-                    
+
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <TextCell Text="{Binding Name}" />
@@ -50,4 +51,5 @@
             </VerticalStackLayout>
         </HorizontalStackLayout>
     </AbsoluteLayout>
+
 </ContentView>
