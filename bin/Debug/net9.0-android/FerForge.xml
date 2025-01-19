@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FerForge</name>
+    </assembly>
+    <members>
+        <member name="T:FerForge._ViewModels.TopBarViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:FerForge._ViewModels.TopBarViewModel.ProjectsManagerStatusLabel">
+            <inheritdoc/>
+        </member>
+        <member name="P:FerForge._ViewModels.TopBarViewModel.IsKnownProjectsVisible">
+            <inheritdoc/>
+        </member>
+        <member name="F:FerForge._ViewModels.TopBarViewModel.knownProjectsButtonPressedCommand">
+            <summary>The backing field for <see cref="P:FerForge._ViewModels.TopBarViewModel.KnownProjectsButtonPressedCommand"/>.</summary>
+        </member>
+        <member name="P:FerForge._ViewModels.TopBarViewModel.KnownProjectsButtonPressedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:FerForge._ViewModels.TopBarViewModel.KnownProjectsButtonPressed"/>.</summary>
+        </member>
+        <member name="F:FerForge._ViewModels.TopBarViewModel.hideKnownProjectsCommand">
+            <summary>The backing field for <see cref="P:FerForge._ViewModels.TopBarViewModel.HideKnownProjectsCommand"/>.</summary>
+        </member>
+        <member name="P:FerForge._ViewModels.TopBarViewModel.HideKnownProjectsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:FerForge._ViewModels.TopBarViewModel.HideKnownProjects"/>.</summary>
+        </member>
+        <member name="T:FerForge.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ProjectsManagerStatusLabel">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ProjectsManagerStatusLabel" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsKnownProjectsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsKnownProjectsVisible" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ProjectsManagerStatusLabel">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ProjectsManagerStatusLabel" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsKnownProjectsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsKnownProjectsVisible" generated properties.</summary>
+        </member>
+    </members>
+</doc>

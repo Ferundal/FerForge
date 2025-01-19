@@ -35,12 +35,18 @@ namespace FerForge._ViewModels
         public ObservableCollection<Project> KnownProjects { get; }
 
         [ObservableProperty]
-        public partial bool IsKnownProjectsListVisible { get; private set; } = false;
+        public partial bool IsKnownProjectsVisible { get; private set; } = false;
 
         [RelayCommand]
-        public void ShowKnownProjects()
+        public void KnownProjectsButtonPressed()
         {
-            IsKnownProjectsListVisible = true;
+            IsKnownProjectsVisible = true;
+        }
+
+        [RelayCommand]
+        public void HideKnownProjects()
+        {
+            IsKnownProjectsVisible = false;
         }
     }
 }
