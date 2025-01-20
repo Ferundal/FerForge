@@ -67,7 +67,7 @@
 
                     <!-- Footer for the "Add new" button -->
                     <ListView.Footer>
-                        <Button Text="Load More" Command="{Binding LoadMoreCommand}" />
+                        <Button Text="Add new project" Command="{Binding LoadMoreCommand}" />
                     </ListView.Footer>
                 </ListView>
 
