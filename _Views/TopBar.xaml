@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FerForge._Views.TopBar">
+             x:Class="FerForge._Views.TopBar"
+             xmlns:local="clr-namespace:FerForge._Views">
 
     <AbsoluteLayout>
 
@@ -23,56 +24,11 @@
         <HorizontalStackLayout
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand">
-            <!-- Known Projects-->
-            <VerticalStackLayout
-                MinimumWidthRequest="300"
-                MaximumWidthRequest="500"
-                HorizontalOptions="FillAndExpand">
-                
-                <!-- Button to droop down known projects list-->
-                <Button
-                    HorizontalOptions="FillAndExpand"
-                    Text="{Binding ProjectsManagerStatusLabel}"
-                    Command="{Binding KnownProjectsButtonPressedCommand}"
-                    BackgroundColor="LightCoral" />
 
-                <ListView
-                    HorizontalOptions="FillAndExpand"
-                    ItemsSource="{Binding KnownProjectsExcludingCurrent}"
-                    IsVisible="{Binding IsKnownProjectsVisible}">
+            <local:ProjectManager
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"/>
 
-                    <!-- Template for each item in the list -->
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal" Padding="10">
-                                    <Label
-                                        Text="{Binding Name}"
-                                        VerticalOptions="Center" />
-                                    <Label
-                                        Text="{Binding Path}"
-                                        HorizontalOptions="EndAndExpand"
-                                        VerticalOptions="Center" />
-                                    <Label
-                                        Text="{Binding LastOpened, StringFormat='{0:MM/dd/yyyy}'}"
-                                        HorizontalOptions="End"
-                                        VerticalOptions="Center" />
-                                    <CheckBox
-                                        IsChecked="{Binding IsAvailable}"
-                                        VerticalOptions="Center" />
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-
-                    <!-- Footer for the "Add new" button -->
-                    <ListView.Footer>
-                        <Button Text="Add new project" Command="{Binding LoadMoreCommand}" />
-                    </ListView.Footer>
-                </ListView>
-
-
-            </VerticalStackLayout>
         </HorizontalStackLayout>
     </AbsoluteLayout>
 

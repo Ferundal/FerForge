@@ -1,4 +1,4 @@
-﻿namespace FerForge._Models.ProjectManager
+﻿namespace FerForge._Models
 {
     public class ProjectInfo
     {

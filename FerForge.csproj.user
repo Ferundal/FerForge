@@ -10,6 +10,9 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
+    <MauiXaml Update="_Views\ProjectManager.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="_Views\Content.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

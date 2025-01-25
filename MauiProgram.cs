@@ -24,7 +24,7 @@ namespace FerForge
 
             builder.Services.AddSingleton<MainPageViewModel>();
             builder.Services.AddSingleton<TopBarViewModel>();
-
+            builder.Services.AddSingleton<ProjectManagerViewModel>();
 
             return builder.Build();
         }
