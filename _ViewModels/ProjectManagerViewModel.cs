@@ -1,46 +1,47 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Maui.Views;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FerForge._Models;
+using FerForge._Views;
 using FerForge.Services.ProjectService;
 using System.Collections.ObjectModel;
 
 namespace FerForge._ViewModels
 {
-    public partial class ProjectManagerViewModel : ObservableObject
+    public partial class ProjectManagerViewModel : ObservableObject, IExpandable
     {
         private const string ProjectsManagerStatusDeafultLabel = "New Project";
+
+        private TopBarViewModel topBarViewModel;
+
         private ProjectInfoService projectInfoService;
         private List<ProjectInfo> knownProjects;
         private ProjectInfo currentProjectInfo;
 
-        public ProjectManagerViewModel(ProjectInfoService projectInfoService)
+        public ProjectManagerViewModel(
+            TopBarViewModel topBarViewModel,
+            ProjectInfoService projectInfoService)
         {
+            this.topBarViewModel = topBarViewModel;
             this.projectInfoService = projectInfoService;
 
-            //knownProjects = projectInfoService.LoadKnownProjects();
-
-            knownProjects = new List<ProjectInfo>
-            {
-                new ProjectInfo { Name="Clown", LastOpened=new DateTime(1991, 2, 6), Path="clown.ferp", IsAvailable=true },
-                new ProjectInfo { Name="Big brother", LastOpened=new DateTime(1984, 2, 6), Path="big_brother.ferp", IsAvailable=true },
-                new ProjectInfo { Name="War", LastOpened=new DateTime(1941, 2, 6), Path="war.ferp", IsAvailable=true }
-            };
+            knownProjects = projectInfoService.LoadKnownProjects();
 
             if (knownProjects.Count > 0)
             {
                 currentProjectInfo = knownProjects[0];
-                ProjectsManagerStatusLabel = currentProjectInfo.Name;
+                StatusLabel = currentProjectInfo.Name;
                 KnownProjectsExcludingCurrent = new ObservableCollection<ProjectInfo>(knownProjects.Skip(1));
             }
             else
             {
-                ProjectsManagerStatusLabel = ProjectsManagerStatusDeafultLabel;
+                StatusLabel = ProjectsManagerStatusDeafultLabel;
                 KnownProjectsExcludingCurrent = new ObservableCollection<ProjectInfo>();
             }
         }
 
         [ObservableProperty]
-        public partial string? ProjectsManagerStatusLabel { get; private set; }
+        public partial string? StatusLabel { get; private set; }
 
         // Collection of known projects
         public ObservableCollection<ProjectInfo> KnownProjectsExcludingCurrent { get; }
@@ -51,13 +52,59 @@ namespace FerForge._ViewModels
         [RelayCommand]
         public void KnownProjectsButtonPressed()
         {
-            IsKnownProjectsVisible = !IsKnownProjectsVisible;
+            if (currentProjectInfo == null)
+            {
+                CreateNewProject();
+                return;
+            }
+
+            if (!IsKnownProjectsVisible)
+            {
+                topBarViewModel.Expand(this);
+            }
+            else
+            {
+                topBarViewModel.Collapce();
+            }
         }
 
-        [RelayCommand]
-        public void HideKnownProjects()
+        public void OnAddNewProjectPressed()
+        {
+            CreateNewProject();
+        }
+
+        public void Collapse()
         {
             IsKnownProjectsVisible = false;
+        }
+
+        public void Expand()
+        {
+            IsKnownProjectsVisible = true;
+        }
+
+        private void CreateNewProject()
+        {
+            var popup = new Popup
+            {
+                Content = new VerticalStackLayout
+                {
+                    Children =
+            {
+                new Label
+                {
+                    Text = "Привет! Это popup.",
+                    FontSize = 18,
+                    HorizontalOptions = LayoutOptions.Center
+                }
+            },
+                    Padding = 20,
+                    Spacing = 15
+                }
+            };
+
+            var view = IPlatformApplication.Current.Services.GetService<MainPage>();
+            PopupExtensions.ShowPopup(view, popup);
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace FerForge
+﻿using FerForge._ViewModels;
+using FerForge._Views;
+
+namespace FerForge
 {
     public partial class App : Application
     {
@@ -9,7 +12,8 @@
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new _Views.MainPage());
+            var view = IPlatformApplication.Current.Services.GetService<MainPage>();
+            return new Window(view);
         }
     }
 }

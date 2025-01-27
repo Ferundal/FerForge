@@ -10,7 +10,7 @@
         <!-- Button to droop down known projects list-->
         <Button
         HorizontalOptions="FillAndExpand"
-        Text="{Binding ProjectsManagerStatusLabel}"
+        Text="{Binding StatusLabel}"
         Command="{Binding KnownProjectsButtonPressedCommand}"
         BackgroundColor="LightCoral" />
 
@@ -45,7 +45,7 @@
 
             <!-- Footer for the "Add new" button -->
             <ListView.Footer>
-                <Button Text="Add new project" Command="{Binding LoadMoreCommand}" />
+                <Button Text="Add new project" Command="{Binding AddNewProjectPressedCommand}" />
             </ListView.Footer>
         </ListView>
 
